@@ -6,9 +6,8 @@
 
 echo "Checking if hub is ready - $HUB_HOST"
 
-do
-	sleep 1
 while [ "$( curl -s http://$HUB_HOST:4444/wd/hub/status | jq -r .value.ready )" != "true" ]
+ sleep 1
 
 # start the java command
 java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* \
